@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &527124938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 527124939}
+  m_Layer: 0
+  m_Name: testPower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &527124939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527124938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.33937597, y: -1.6911616, z: 3.6585069}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &596098965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -435,10 +465,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2066896392029128874, guid: 45288819fde2143449a96207b14db0bb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: af24e35653ada3042833537e3a524ded, type: 2}
     - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1669803
+      value: 2.1129959
       objectReference: {fileID: 0}
     - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
         type: 3}
@@ -448,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.33
+      value: 0.329975
       objectReference: {fileID: 0}
     - target: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
         type: 3}
@@ -755,7 +790,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &1804577743
 MonoBehaviour:
@@ -772,6 +807,7 @@ MonoBehaviour:
   H_controller: Horizontal
   V_controller: Vertical
   dash: Fire1
+  taunt: taunt_p1
 --- !u!114 &1804577744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,6 +823,7 @@ MonoBehaviour:
   moveSpeed: 3
   mainCam: {fileID: 736092710}
   rotSpeed: 7
+  dashTimer: 0
 --- !u!114 &1804577745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +859,7 @@ MonoBehaviour:
   moveSpeed: 3
   mainCam: {fileID: 736092710}
   rotSpeed: 7
+  dashTimer: 0
 --- !u!65 &2041023674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -866,6 +904,7 @@ MonoBehaviour:
   H_controller: p2_horizontal
   V_controller: p2_vertical
   dash: Fire3
+  taunt: taunt_p2
 --- !u!114 &2041023677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,3 +919,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arena: {fileID: 1597876515}
   evm: {fileID: 1597876516}
+--- !u!114 &2041023680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041023672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd99b9de9c4d07a46a82c36073c871f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

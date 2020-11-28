@@ -9,11 +9,13 @@ public class charMover : MonoBehaviour
     [SerializeField] private Camera mainCam;
     [SerializeField] private float rotSpeed;
     private Rigidbody rb;
+    public float dashTimer;
 
 
     private void Awake()
     {
         _in = GetComponent<inputManager>();
+        dashTimer = 0f;
     }
 
     private void Start()
@@ -26,15 +28,15 @@ public class charMover : MonoBehaviour
         Vector3 targetVec = new Vector3(_in.inVector.x, 0, _in.inVector.y);
 
         //move
-        //Debug.Log(_in.getDash());
         Vector3 movementVector = moveTowardTarget(targetVec);
         //rotate in the direction the character is traveling.
         facingForward(movementVector);
-        if (_in.getDash() == true)
-        {
-            rb.AddForce(transform.forward * 100f, ForceMode.Impulse);
-           
-        }
+        dash(_in.getDash()); //-> function to allow dashing only once in a certain time.
+        changeVelocity();
+        dashTimer = countDown(dashTimer, 0.1f);
+        //test
+        
+ 
     }
 
     private Vector3 moveTowardTarget(Vector3 _targetVec)
@@ -62,5 +64,32 @@ public class charMover : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(_target);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotSpeed);
         
+    }
+    private void dash(bool _isDashing)
+    {
+        if (_isDashing == true && dashTimer < 0.1)
+        {
+            rb.AddForce(transform.forward * 1000f, ForceMode.Impulse);
+            dashTimer = 5f;
+        }
+    }
+    private float countDown(float _timer,float _minimumTime)
+    {
+        if (_timer > _minimumTime)
+        {
+            _timer -= Time.deltaTime;
+        }
+        return _timer;
+    }
+    private void changeVelocity()
+    {
+        if (rb.velocity.magnitude > 1.4 || rb.velocity.magnitude < -1.4)
+        {
+            rb.mass = 10000f;
+        }
+        else
+        {
+            rb.mass = 100f;
+        }
     }
 }

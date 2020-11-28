@@ -57,9 +57,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\charMover.cs" />
     <Compile Include="Assets\Scripts\inputManager.cs" />
-    <Compile Include="Assets\PointsManager.cs" />
-    <Compile Include="Assets\EnvironmentManager.cs" />
-    <Compile Include="Assets\ArenaCheck.cs" />
+    <Compile Include="Assets\Scripts\PointsManager.cs" />
+    <Compile Include="Assets\Scripts\EnvironmentManager.cs" />
+    <Compile Include="Assets\Scripts\ArenaCheck.cs" />
+    <Compile Include="Assets\Scripts\animationState.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\changes.txt" />

@@ -27,6 +27,7 @@ public class EnvironmentManager : MonoBehaviour
     {
         ResetPositions();
         ptm.addOppositePoints(this.gameObject); //give points to players still in it
+        
     }
 
     void ResetPositions()
@@ -35,6 +36,8 @@ public class EnvironmentManager : MonoBehaviour
         {
             gO.transform.position = positions[gO];
             gO.transform.rotation = rotations[gO];
+            gO.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+            gO.GetComponent<charMover>().dashTimer = 0;
         }
     }
 }
