@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7240649403625163085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7240649403625163091}
+  - component: {fileID: 7240649403625163090}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7240649403625163091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240649403625163085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.198093, y: -5.810812, z: -98.95151}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7240649403625163090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240649403625163085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e8e783869c720b4baa8a87ae4baa89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Music1
+    clip: {fileID: 8300000, guid: 946e6315ed8ff6244977267ae4607f85, type: 3}
+    volume: 0.622
+    loop: 0
+    mixer: {fileID: 24300002, guid: 342b30c52e8e32f43889fc2aa190ee84, type: 2}
+    source: {fileID: 0}
+  - name: Music2
+    clip: {fileID: 8300000, guid: 3126e81216b249d4aa78ee0264c145b9, type: 3}
+    volume: 0.622
+    loop: 0
+    mixer: {fileID: 24300002, guid: 342b30c52e8e32f43889fc2aa190ee84, type: 2}
+    source: {fileID: 0}
+  - name: Music3
+    clip: {fileID: 8300000, guid: 209e43c99886041468acf2eab24e0a38, type: 3}
+    volume: 0.622
+    loop: 0
+    mixer: {fileID: 24300002, guid: 342b30c52e8e32f43889fc2aa190ee84, type: 2}
+    source: {fileID: 0}
