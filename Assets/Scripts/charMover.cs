@@ -69,7 +69,7 @@ public class charMover : MonoBehaviour
     {
         if (_isDashing == true && dashTimer < 0.1)
         {
-            rb.AddForce(transform.forward * 1000f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 1500f, ForceMode.Impulse);
             dashTimer = 5f;
         }
     }
