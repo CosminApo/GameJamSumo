@@ -13,17 +13,23 @@ public class inputManager : MonoBehaviour
     [SerializeField] string taunt;
     private float dashing;
     private float taunting;
+    private bool disabled = false;
 
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxis(H_controller);//debugging
-        float v = Input.GetAxis(V_controller);
-        dashing = Input.GetAxis(dash);
-        taunting = Input.GetAxis(taunt);
-        inVector = new Vector2(h, v);
+        if (!disabled)
+        {
+            float h = Input.GetAxis(H_controller);//debugging
+            float v = Input.GetAxis(V_controller);
+            dashing = Input.GetAxis(dash);
+            taunting = Input.GetAxis(taunt);
+            inVector = new Vector2(h, v);
+        }
         getDash();
         getTaunt();
+
+        
     }
     public bool getDash()
     {
@@ -46,6 +52,14 @@ public class inputManager : MonoBehaviour
         {
             return false;
         }
+    }
+    public void setDisable(bool _isDisabled)
+    {
+        disabled = _isDisabled;
+    }
+    public bool getDisable()
+    {
+        return disabled;
     }
 
 }

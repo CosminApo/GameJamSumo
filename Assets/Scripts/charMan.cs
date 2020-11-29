@@ -44,7 +44,6 @@ public class charMan : MonoBehaviour
             if (collision.gameObject.tag == "enemy")
             {
                 Debug.Log("Destroyed");
-                collision.gameObject.GetComponent<Animator>().enabled = false;
             }
         }
     }

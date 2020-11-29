@@ -10332,6 +10332,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1804577744, guid: 4173033321661c84b97f6be158544f12, type: 3}
+      propertyPath: positionDummy
+      value: 
+      objectReference: {fileID: 1382973809}
     - target: {fileID: 1804577745, guid: 4173033321661c84b97f6be158544f12, type: 3}
       propertyPath: arena
       value: 
@@ -10961,6 +10965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe5e1c162896fa439569f425e442c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1score: {fileID: 0}
+  p2score: {fileID: 0}
   players:
   - {fileID: 2082262719}
   - {fileID: 566647698}

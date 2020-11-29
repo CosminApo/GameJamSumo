@@ -23,11 +23,11 @@ public class EnvironmentManager : MonoBehaviour
     }
 
 
-    public void EndRound()
+    public void EndRound(GameObject _player)
     {
         ResetPositions();
-        ptm.addOppositePoints(this.gameObject); //give points to players still in it
-        
+        ptm.addOppositePoints(_player.gameObject); //give points to players still in it
+
     }
 
     void ResetPositions()
@@ -36,8 +36,10 @@ public class EnvironmentManager : MonoBehaviour
         {
             gO.transform.position = positions[gO];
             gO.transform.rotation = rotations[gO];
-            gO.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+            gO.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             gO.GetComponent<charMover>().dashTimer = 0;
+            gO.GetComponent<Animator>().enabled = true;
+            gO.GetComponent<Collider>().enabled = true;
         }
     }
 }

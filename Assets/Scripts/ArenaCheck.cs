@@ -8,11 +8,11 @@ public class ArenaCheck : MonoBehaviour
     public GameObject arena;
     public EnvironmentManager evm;
 
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject == arena) //if player is exiting collision with arena then
         {
-            evm.EndRound();
+            evm.EndRound(this.gameObject);
         }
     }
 }
