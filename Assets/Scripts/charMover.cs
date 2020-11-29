@@ -69,6 +69,7 @@ public class charMover : MonoBehaviour
     {
         if (_isDashing == true && dashTimer < 0.1)
         {
+            FindObjectOfType<AudioManager>().PlaySwish(); //play a sound
             rb.AddForce(transform.forward * 1500f, ForceMode.Impulse);
             dashTimer = 0.5f;
         }

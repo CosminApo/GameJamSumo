@@ -25,6 +25,8 @@ public class animationState : MonoBehaviour
         if(gameObject.GetComponent<inputManager>().inVector.x != 0.00f || gameObject.GetComponent<inputManager>().inVector.y != 0.00f)
         {
             anim.SetBool("isMoving", true);
+            if (!gameObject.GetComponent<AudioSource>().isPlaying)
+            gameObject.GetComponent<AudioSource>().Play();
         }
         else if(gameObject.GetComponent<inputManager>().inVector.x == 0.0f || gameObject.GetComponent<inputManager>().inVector.y == 0.0f)
         {

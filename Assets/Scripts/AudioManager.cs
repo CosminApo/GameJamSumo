@@ -49,4 +49,10 @@ public class AudioManager : MonoBehaviour
         if (!s.source.isPlaying)
         s.source.Play();
     }
+
+    public void PlaySwish()
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == "swish");
+        s.source.Play();
+    }
 }

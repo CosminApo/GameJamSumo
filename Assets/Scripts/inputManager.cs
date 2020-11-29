@@ -14,7 +14,7 @@ public class inputManager : MonoBehaviour
     private float dashing;
     private float taunting;
     private bool disabled = false;
-
+    public GameObject pauseMenu;
     // Update is called once per frame
     void Update()
     {
@@ -28,8 +28,12 @@ public class inputManager : MonoBehaviour
         }
         getDash();
         getTaunt();
+        if (Input.GetKeyDown(KeyCode.Escape) == true)
+        {
+            Time.timeScale = 0.0f;
+            pauseMenu.SetActive(true);
+        }
 
-        
     }
     public bool getDash()
     {

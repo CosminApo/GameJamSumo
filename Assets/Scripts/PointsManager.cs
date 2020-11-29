@@ -44,11 +44,11 @@ public class PointsManager : MonoBehaviour
                 points[gO] += 1;
                 if (currentplayer == 1)
                 {
-                    //p1score.text = points[gO].ToString();
+                    p1score.text = points[gO].ToString();
                 }
                 else if (currentplayer == 2)
                 {
-                    //p2score.text = points[gO].ToString();
+                    p2score.text = points[gO].ToString();
                 }
             }
         }

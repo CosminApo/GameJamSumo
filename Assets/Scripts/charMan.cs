@@ -23,7 +23,6 @@ public class charMan : MonoBehaviour
     void Update()
     {
         attack();
-
     }
 
     private void attack()
