@@ -87,10 +87,34 @@ public class charMover : MonoBehaviour
         if (rb.velocity.magnitude > 1.4 || rb.velocity.magnitude < -1.4)
         {
             rb.mass = 10000f;
+            lightUp();
         }
         else
         {
             rb.mass = 100f;
+            lightsOut();
+        }
+    }
+    private void lightUp()
+    {
+        if (gameObject.name == "p2 Variant")
+        {
+            gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.red);
+        }
+        else if(gameObject.name == "p1 Variant")
+        {
+            gameObject.GetComponent<TrailRenderer>().material.SetColor("_EmissionColor", Color.blue);
+        }
+    }
+    private void lightsOut()
+    {
+        if (gameObject.name == "p2 Variant")
+        {
+            gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.black);
+        }
+        else if (gameObject.name == "p1 Variant")
+        {
+            gameObject.GetComponent<TrailRenderer>().material.SetColor("_EmissionColor", Color.black);
         }
     }
 }

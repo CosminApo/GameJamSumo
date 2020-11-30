@@ -10,6 +10,7 @@ public class PointsManager : MonoBehaviour
 {
     public Text p1score;
     public Text p2score;
+    public GameObject menu1, menu2;
 
 
     [SerializeField]
@@ -23,13 +24,29 @@ public class PointsManager : MonoBehaviour
         {
             points.Add(gO, 0); //add it to dictionary
         }
-
     }
 
 
     void Update()
     {
-
+        int currentplayer = 0;
+        foreach (GameObject gO in players) //give a point to other players
+        {
+            currentplayer += 1;
+            if (points[gO] >= 5)
+            {
+                if (currentplayer == 1)
+                {
+                    menu1.SetActive(true);
+                   // Time.timeScale = 0;
+                }
+                else if (currentplayer == 2)
+                {
+                    menu2.SetActive(true);
+                    //Time.timeScale = 0;
+                }
+            }
+        }
     }
 
     public void addOppositePoints(GameObject _player)
